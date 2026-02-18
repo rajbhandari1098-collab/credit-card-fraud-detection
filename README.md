@@ -52,5 +52,3 @@ https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
 
 ---
 
-## 📁 Project Structure
-
