@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Credit Card Fraud Detection</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f6f9;
+            text-align: center;
+        }
+
+        input {
+            margin: 5px;
+            padding: 6px;
+            width: 150px;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Credit Card Fraud Detection</h2>
+
+    <form action="/predict" method="post">
+
+        {% for feature in features %}
+            <input type="text" name="{{ feature }}" placeholder="{{ feature }}" required>
+            {% if loop.index % 4 == 0 %}
+                <br>
+            {% endif %}
+        {% endfor %}
+
+        <br><br>
+        <button type="submit">Predict</button>
+
+    </form>
+
+    <h3>{{ prediction_text }}</h3>
+</div>
+
+</body>
+</html>
